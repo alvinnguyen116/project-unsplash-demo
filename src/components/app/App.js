@@ -7,20 +7,22 @@ import {connect} from 'react-redux';
 import {CSSTransition} from "react-transition-group";
 
 function App({photos, dispatch}) {
-  const [photoLimit, setPhotoLimit] = useState(12);
+  const PHOTO_LENGTH = 12;
+  const [photoLimit, setPhotoLimit] = useState(PHOTO_LENGTH);
   const [firstSearch, setFirstSearch] = useState(true);
 
   const handleKeyUp = e => {
     if (firstSearch) setFirstSearch(false);
     try {
       dispatch(fetchPhotos(e.target.value));
-    } catch (e) {
-      console.log(e);
+      setPhotoLimit(PHOTO_LENGTH);
+    } catch (err) {
+      console.log(err);
     }
   };
 
   const handleLastRow = () => {
-    setPhotoLimit(photoLimit + 12);
+    setPhotoLimit(photoLimit + PHOTO_LENGTH);
   };
 
   let style = {
