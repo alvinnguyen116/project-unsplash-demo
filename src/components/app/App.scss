@@ -1,0 +1,36 @@
+* {
+  --search-grey: #dfe1e5;
+}
+
+.query-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  transform: translate(0, -50%);
+  transition: top 0.5s ease-in-out 0s;
+}
+
+main {
+  padding-bottom: 100px;
+}
+
+.photos {
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-done {
+    opacity: 1;
+    transition: opacity .5s ease-in-out .5s;
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+  }
+}

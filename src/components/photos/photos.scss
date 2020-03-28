@@ -1,0 +1,31 @@
+.photos {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  width: fit-content;
+  margin: 100px auto 20px;
+
+  .photo {
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 250px;
+    height: 250px;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 1px 10px 0 black;
+    }
+  }
+}
+
+@media (max-width: 830px) {
+    .photos-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 566px) {
+    .photos-container {
+      grid-template-columns: 1fr;
+    }
+}
